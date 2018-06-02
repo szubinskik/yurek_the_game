@@ -1,2 +1,2 @@
-# yurek_the_game
+# Yurek: The Game
 Fiszki z semestralnego kursu Teorii Prawdopodobieństwa
