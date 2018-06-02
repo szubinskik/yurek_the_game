@@ -1,0 +1,26 @@
+\documentclass[avery5371,grid,frame]{flashcards}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+
+\begin{document}
+
+\cardfrontfoot{Teoria Prawdopodobieństwa}
+
+
+\begin{flashcard}[Twierdzenie]{Lematy Borela-Cantellego}
+
+Niech $\{A_n\}_{n < \omega}$: ciąg zdarzeń losowych.
+\begin{description}
+\item[I lemat Borela-Cantellego] \hfill \\
+	Jeśli $\sum_{n=0}^{\infty} P(A_n) < \infty$, to $P\left(\limsup\limits_{n \rightarrow \infty}{A_n}\right)=1$
+\item[II lemat Borela-Cantellego] \hfill \\
+	Jeśli $\sum_{n=0}^{\infty} P(A_n) = \infty$ i $A_n$ są stochastycznie niezależne, to $P\left(\limsup\limits_{n \rightarrow \infty}{A_n}\right)=1$ 
+\end{description}
+
+\end{flashcard}
+
+\end{document}
