@@ -174,4 +174,13 @@ $$ -1 \leq \liminf_n \frac{S_n}{\sqrt{2n \log \log n}} \leq  \limsup_n \frac{S_n
 Jeżeli $Z_n$ są i.i.d., $\mathbb{E}[Z_i] = 0$, $Var(Z_i) < \infty$, to $$\frac{1}{\sigma} \sum_{i=1}^n \frac{Z_i}{n} \Rightarrow \mathcal{N}(0, 1)$$
 \end{flashcard}
 
+\begin{flashcard}[Twierdzenie]{CLT Lindeberga}
+
+\smallskip
+Niech $Y_{n, 1}, \dots, Y_{n, k_n}$ będą niezależne, $\mathbb{E}[Y_{n, j}] = 0$, $\sigma_{n, j}^2 = Var(Y_{n, j})$, $s_n^2 = \sum_{j = 1}^{k_n} \sigma_{n, j}^2$. Jeżeli dla każdego $\varepsilon > 0$ mamy
+$$\lim \frac{1}{s_n^2} \int_{\{|Y_{n, j} \geq \varepsilon s_n\}} Y_{n, j}^2 \ dP = 0$$
+to
+$$ \frac{1}{s_n} \sum_{j = 1}^{k_n} \Rightarrow \mathcal{N}(0, 1)$$
+\end{flashcard}
+
 \end{document}
