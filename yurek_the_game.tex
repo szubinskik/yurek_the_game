@@ -38,7 +38,7 @@ Jeśli $X_n \rightarrow X$ wg. $P$, to istnieją $n_k$ takie, \\
 
 \smallskip
 Ciąg miar jest ciasny, gdy
-$$ (\forall \ \varepsilon > 0)(\exists \ a, b \in \mathbb{R})(\forall \ n > 0) \Big[\mu_n \left( (a,b] \right) > 1-\varepsilon \Big] $$
+$$ (\forall \varepsilon > 0)(\exists a, b \in \mathbb{R})(\forall n > 0) \Big[\mu_n \left( (a,b] \right) > 1-\varepsilon \Big] $$
 \end{flashcard}
 
 \begin{flashcard}[Definicja]{$\pi$ i $\lambda$ systemy}
@@ -81,15 +81,15 @@ Funkcję charakterystyczną zmiennej losowej $X \sim F$ określamy jako
 \smallskip
 \begin{enumerate}
 \item Jeśli $\mu_n \Rightarrow \mu$ $(F_n \Rightarrow F)$, to \\ 
-$(\forall \ t \in \mathbb{R})\left[\varphi_{\mu_n}(t) \rightarrow \varphi_\mu(t) \right]$
-\item Jeśli $(\forall \ t \in \mathbb{R})\left[\varphi_{\mu_n}(t) \rightarrow \varphi(t) \right]$ i $\varphi(t)$ jest \\ ciągła w $0$, to $\varphi(t)$ jest ciągła na $\mathbb{R}$ i istnieje $\mu$ taka, że $\mu_n \Rightarrow \mu$
+$(\forall t \in \mathbb{R})\left[\varphi_{\mu_n}(t) \rightarrow \varphi_\mu(t) \right]$
+\item Jeśli $(\forall t \in \mathbb{R})\left[\varphi_{\mu_n}(t) \rightarrow \varphi(t) \right]$ i $\varphi(t)$ jest \\ ciągła w $0$, to $\varphi(t)$ jest ciągła na $\mathbb{R}$ i istnieje $\mu$ taka, że $\mu_n \Rightarrow \mu$
 \end{enumerate}
 \end{flashcard}
 
 \begin{flashcard}[Twierdzenie]{Twierdzenie Skorochoda o reprezentacji}
 
 \smallskip
-Jeśli $F_n$, $F$: dystrybuanty i $F_n \Rightarrow F$, to istnieją $\left( \Omega, \mathcal{F}, P \right)$, $Y_n$, $Y$: zmienne losowe takie, że $F_{Y_n} = F_n$, $F_Y=F$ i $(\forall \ \omega \in \Omega)[Y_n(\omega) \rightarrow Y(\omega)]$
+Jeśli $F_n$, $F$: dystrybuanty i $F_n \Rightarrow F$, to istnieją $\left( \Omega, \mathcal{F}, P \right)$, $Y_n$, $Y$: zmienne losowe takie, że $F_{Y_n} = F_n$, $F_Y=F$ i $(\forall \omega \in \Omega)[Y_n(\omega) \rightarrow Y(\omega)]$
 \end{flashcard}
 
 \begin{flashcard}[Twierdzenie]{Różniczkowalność funkcji charakterystycznych}
@@ -188,6 +188,18 @@ $$ \frac{1}{s_n} \sum_{j = 1}^{k_n} \Rightarrow \mathcal{N}(0, 1)$$
 \smallskip
 Układ trójkątny $X_{n, k}$ jest infinitezymalny,gdy
 $$\max_k \ P(|X_{n, k}| \geq \varepsilon) \xrightarrow[n]{} 0$$ dla każdego $\varepsilon > 0$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Portmanteau}
+
+Następujące warunki są równoważne:
+\begin{enumerate}
+\item $F_n \implies F$
+\item $\left( \forall h: \text{ogr., jedn. ciągła} \right) \left[ \int_\mathbb{R} h \ dF_n \xrightarrow{n} \int_\mathbb{R} h \ dF \right]$
+\item $\left( \forall C \subseteq \mathbb{R} \text{: dkn.} \right) \left[\limsup P[X_n \in C] \leq P[X \in C] \right]$
+\item $\left( \forall G \subseteq \mathbb{R} \text{: otw.} \right) \left[ P[X \in G] \leq \liminf P[X_n \in G] \right]$
+\item $\left( \forall B \in \text{Bor}(\mathbb{R})\right) \left[ \lim P[X_n \in B] = P[X \in B] \right]$ \\ jeśli $P[X \in \partial B] = 0$
+\end{enumerate}
 \end{flashcard}
 
 \end{document}
