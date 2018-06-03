@@ -143,4 +143,10 @@ Spełnianie dla pewnego $c > 0$ jest warunkiem dostatecznym zbieżności $\sum X
 Zbieżność p.n. $\implies$ zbieżność wg $P$ $\implies$ zbieżność wg rozkładu.
 \end{flashcard}
 
+\begin{flashcard}[Twierdzenie]{Nierówność Berry-Essena}
+	\smallskip
+	Niech $X_n$ będą i.i.d., $\mathbb{E}[X_i] = 0$, $\sigma^2 = Var(X_i)$, $\rho = \mathbb{E}[|X_i|^3] < \infty$. Wtedy
+	$$ \sup_{a \in \mathbb{R}} \left | \mathbb{P}\left(\frac{X_1 + \dots + X_n}{\sigma \sqrt{n}} < a \right ) - \Phi(a) \right | \leq C \frac{\rho}{\sigma^3 \sqrt{n}},$$ gdzie $C \leq 0,4718$.
+\end{flashcard}
+
 \end{document}
