@@ -20,9 +20,9 @@
 Niech $A_n$: ciąg zdarzeń losowych.
 \begin{description}
 \item[I lemat Borela-Cantellego] \hfill \\
-	Jeśli $\sum_{n=0}^{\infty} P(A_n) < \infty$, to $P\left(\limsup\limits_{n \rightarrow \infty}{A_n}\right)=0$
+	Jeśli $\sum P(A_n) < \infty$, to $P\left(\limsup{A_n}\right)=0$
 \item[II lemat Borela-Cantellego] \hfill \\
-	Jeśli $\sum_{n=0}^{\infty} P(A_n) = \infty$ i $A_n$ są stochastycznie niezależne, to $P\left(\limsup\limits_{n \rightarrow \infty}{A_n}\right)=1$ 
+	Jeśli $\sum P(A_n) = \infty$ i $A_n$ są stochastycznie niezależne, to $P\left(\limsup{A_n}\right)=1$ 
 \end{description}
 \end{flashcard}
 
@@ -103,12 +103,21 @@ Jeśli $\mathbb{E} \left[ |X|^k \right] < \infty$, to $\varphi_X$ jest $k$-krotn
 \smallskip
 Niech $X_n$, $X$: zm. los. o dystrybuantach $F_n$, $F$. \\
 Mówimy, że zachodzi słaba zbieżność $X_n \Rightarrow X$ gdy $\left( \forall \ a \in C_F \right) \left[ F_n(a) \rightarrow F(a) \right]$
-\end{flashcard}\begin{flashcard}[Twierdzenie]{Prawo zero-jedynkowe Kołmogorowa}
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Prawo zero-jedynkowe Kołmogorowa}
 
 \smallskip
 Niech $\mathcal{F}_1$, $\mathcal{F}_2$, \dots będą niezależnymi $\sigma$-ciałami. \\
 Niech $\mathcal{F}_{n, \infty} \coloneqq \sigma(\mathcal{F}_n, \mathcal{F}_{n+1}, \dots)$ i \\ niech $\mathcal{F}_\infty \coloneqq \bigcap \limits_{n=1}^\infty \mathcal{F}_{k, \infty}$. \\
 Wtedy, jeżeli $A \in \mathcal{F}_\infty$, to $P(A) = 1$ lub $P(A) = 0$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Twierdzenie o dwóch szeregach}
+
+\smallskip
+Niech $X_n$: ciąg niezależnych zmiennych losowych. \\
+Jeżeli $\sum \mathbb{E}[X_n] < \infty$ i $\sum Var(X_n) < \infty$, to $\sum X_n$ jest zbieżny p.n.
 \end{flashcard}
 
 \end{document}
