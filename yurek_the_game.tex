@@ -72,13 +72,20 @@ Funkcję charakterystyczną zmiennej losowej $X \sim F$ określamy jako
 {\begin{align*}
 \varphi_X(t) = \mathbb{E} \left[ e^{itX} \right] &= \int_{\Omega} e^{itX} \ dP \\
              &= \int_{\mathbb{R}} e^{itx} \ d \mu \\
-             &= \int_{-\infty}^{\infty} e^{itx} \ dF_X 
+             &= \int_{-\infty}^{+\infty} e^{itx} \ dF_X 
 \end{align*}}
 \end{flashcard}
 
-\begin{flashcard}[Twierdzenie]{(blank)}
-(blank)
+\begin{flashcard}[Twierdzenie]{Twierdzenie Lévy'ego o ciągłości}
+
+\smallskip
+\begin{enumerate}
+\item Jeśli $\mu_n \Rightarrow \mu$ $(F_n \Rightarrow F)$, to \\ 
+$(\forall \ t \in \mathbb{R})\left[\varphi_{\mu_n}(t) \rightarrow \varphi_\mu(t) \right]$
+\item Jeśli $(\forall \ t \in \mathbb{R})\left[\varphi_{\mu_n}(t) \rightarrow \varphi(t) \right]$ i $\varphi(t)$ jest \\ ciągła w $0$, to $\varphi(t)$ jest ciągła na $\mathbb{R}$ i istnieje $\mu$ taka, że $\mu_n \Rightarrow \mu$
+\end{enumerate}
 \end{flashcard}
+
 \begin{flashcard}[Twierdzenie]{(blank)}
 (blank)
 \end{flashcard}
