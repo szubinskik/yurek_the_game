@@ -132,4 +132,16 @@ Niech $X_n$: ciąg niezależnych zmiennych losowych. Jeśli $\sum X_n$ jest zbie
 Spełnianie dla pewnego $c > 0$ jest warunkiem dostatecznym zbieżności $\sum X_n$ z $P1$.
 \end{flashcard}
 
+\begin{flashcard}[Definicja]{Rodzaje zbieżności zmiennych}
+
+\smallskip
+\begin{enumerate}
+	\item Zbieżność prawie na pewno ($P1$): $X_n \xrightarrow{a.s} X$, gdy $P(\{\omega: X_n(\omega) \rightarrow X(\omega)\}) = 1$.
+	\item Zbieżność wg prawdopodobieństwa: $X_n \xrightarrow{P} X$, gdy dla każdego $\varepsilon > 0$ mamy \\
+	$\lim_{n \to \infty} P(\omega : |X_n(\omega) - X(\omega)| > \varepsilon) = 0$.
+	\item Zbieżność wg rozkładu: $X_n \Rightarrow X$, gdy \\ 
+	$F_n(x) \to F(x)$ dla każdego $x \in C_{F_X}$.
+\end{enumerate}
+\end{flashcard}
+
 \end{document}
