@@ -146,7 +146,14 @@ Zbieżność p.n. $\implies$ zbieżność wg $P$ $\implies$ zbieżność wg rozk
 \begin{flashcard}[Twierdzenie]{Nierówność Berry-Essena}
 	\smallskip
 	Niech $X_n$ będą i.i.d., $\mathbb{E}[X_i] = 0$, $\sigma^2 = Var(X_i)$, $\rho = \mathbb{E}[|X_i|^3] < \infty$. Wtedy
-	$$ \sup_{a \in \mathbb{R}} \left | \mathbb{P}\left(\frac{X_1 + \dots + X_n}{\sigma \sqrt{n}} < a \right ) - \Phi(a) \right | \leq C \frac{\rho}{\sigma^3 \sqrt{n}},$$ gdzie $C \leq 0,4718$.
+	$$ \sup_{a \in \mathbb{R}} \left | P\left(\frac{X_1 + \dots + X_n}{\sigma \sqrt{n}} < a \right ) - \Phi(a) \right | \leq C \frac{\rho}{\sigma^3 \sqrt{n}},$$ gdzie $C \leq 0,4718$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Prawo iterowanego logarytmu}
+
+\smallskip
+Jeżeli $X_n$ są i.i.d., $\mathbb{E}[X_n] = 0$, $Var(X_n) = 1$, to
+$$ -1 \leq \liminf_n \frac{S_n}{\sqrt{2n \log \log n}} \leq  \limsup_n \frac{S_n}{\sqrt{2n \log \log n}} \leq 1$$ prawie na pewno.
 \end{flashcard}
 
 \end{document}
