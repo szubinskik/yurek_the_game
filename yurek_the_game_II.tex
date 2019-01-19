@@ -1,0 +1,134 @@
+\documentclass[avery5371,grid,frame]{flashcards}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathtools}
+
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+
+
+\begin{document}
+
+\cardfrontfoot{Teoria Prawdopodobieństwa}
+
+% % % % % % % % % % % % % % % % %
+% Warunkowa wartość oczekiwana  %
+% % % % % % % % % % % % % % % % %
+
+\begin{flashcard}[Definicja]{Warunkowa wartość oczekiwana}
+
+\smallskip
+Niech $ X \in L_1 (P)$, $ \mathcal{G} \subseteq  \mathcal{F}$ \\
+Wtedy $\mathbb{E} [ X | \mathcal{G} ]$ to funkcja $g$ t. że:
+\begin{itemize}
+\item $g$ jest $\mathcal{G}$-mierzalna
+\item $\forall G \in \mathcal{G} \int_G X \, dP = \int_G g \, dP$
+\end{itemize}
+Ponadto $g$ jest jedyną taką funkcją z $P1$. \\
+Jeśli $X \in L_2(P)$, to $\mathbb{E} [ X | \mathcal{G} ]$ jest rzutem na $L_2(\mathcal{G})$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Własności warunkowej wartości oczekiwanej}
+
+Dla $X, Y \in L_1(P)$, $a, b, c \in \mathbb{R}$:
+\begin{itemize}
+\item $\mathbb{E}[aX +bY | \mathcal{G}] = a \, \mathbb{E}[ X | \mathcal{G} ] +
+                                          b \, \mathbb{E}[ Y | \mathcal{G} ]$ z $P1$.
+\item $\mathbb{E}[c | \mathcal{G} ] = c $ z $P1$.
+\item Jeśli $X \leq Y $ z $P1$, to $ \mathbb{E}[X | \mathcal{G}] \leq \mathbb{E}[Y | \mathcal{G}]$ z $P1$.
+\item $\mathbb{E} [ \mathbb{E} [ X | \mathcal{G} ] ] = \mathbb{E}[X]$.
+\item Jeśli $XY \in L_1(P)$, $Y$ : $\mathcal{G}$-mierzalne, to $\mathbb{E}[XY|\mathcal{G}]] =
+                                                                Y\mathbb{E}[X|\mathcal{G}]]$ z $P1$.
+\end{itemize}
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Mniejsza $\sigma$-algebra wygrywa}
+
+\smallskip
+Niech $\mathcal{G}_1 \subseteq \mathcal{G}_2$: $\sigma$-algebry. \\
+Wtedy $\mathbb{E} [ \mathbb{E} [ X | \mathcal{G}_2] | \mathcal{G}_1 ] =
+       \mathbb{E} [ \mathbb{E} [ X | \mathcal{G}_1] | \mathcal{G}_2 ] =
+       \mathbb{E} [ X | \mathcal{G}_1]$
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\end{flashcard}
+
+% % % % % % % %
+% Martyngały  %
+% % % % % % % %
+
+\begin{flashcard}[Definicja]{Martyngał}
+\smallskip
+Ustalmy $ \left( \Omega, \mathcal{F}, \left( \mathcal{F}_i \right) _{i < \omega}, P \right) $ t. że $\mathcal{F}_0 \subseteq \mathcal{F}_1 \subseteq ... \subseteq \mathcal{F}$. \\
+Jeśli ciąg $\left( X_n \right) _{n < \omega} $ spełnia:
+\begin{itemize}
+\item $ X_n \in L_1(P) $
+\item $ X_n $: $ \mathcal{F}_n $-mierzalny
+\item $ \mathbb{E} [ X_{n+1} | \mathcal{F}_n ] = X_n $ z $P1$
+\end{itemize}
+to jest martyngałem. ($ \leq $: nadmartyngałem [supermartyngałem], $ \geq $: submartyngałem)
+\end{flashcard}
+
+\begin{flashcard}[Definicja]{Ciąg prognozowalny}
+
+\smallskip
+Ciąg $ \left( H_n \right) _{n < \omega} $ jest prognozowalny, jeśli $H_{n+1}$ jest $\mathcal{F}_n$-mierzalny.
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\end{flashcard}
+
+% % % % % % % % %
+% Ruchy Browna  %
+% % % % % % % % %
+
+\begin{flashcard}[Definicja]{Ruch Browna \\ (Proces Wienera)}
+
+Rodzina zmiennych losowych $ \left( W_t \right) _{t > 0} $ t. że:
+\begin{itemize}
+\item $W_0 \equiv 0$ z $P1$
+\item $W_t - W_s \stackrel{d}{=} N(0, t-s)$ dla $ t > s $
+\item $(\forall {n \geq 2}) \, (\forall { 0 \leq t_1 \leq ... \leq t_n }) \, W_{t_j} - W_{t_i}$ są s.n.
+\item $t \mapsto W_t(\omega)$ są ciągłe z $P1$
+\end{itemize}
+jest nazywana ruchem Browna bądź procesem Wienera. Będziemy też używać oznaczeń $W(t)$, $W(t; \omega)$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Równoważna definicja ruchu Browna}
+
+\smallskip
+Rodzina zmiennych losowych $ \left( W_t \right) _{t > 0} $ t. że:
+\begin{itemize}
+\item $W(0) = 0$ z $P1$
+\item rozkłady skończone są normalne w $\mathbb{R}^n$
+\item $\text{Cov}(W(t), W(s)) = t \wedge s$
+\item $t \mapsto W(t; \omega)$ jest ciągła z $P1$
+\end{itemize}
+jest ruchem Browna.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Różniczkowalność procesu Wienera}
+
+\smallskip
+(Wiener, 1930) Trajektorie procesu Wienera są nigdzie nieróżniczkowalne z $P1$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Przekształcanie ruchu Browna}
+
+\smallskip
+Jeśli $W(t)$, $t \geq 0$ jest procesem Wienera, to:
+\begin{itemize}
+\item $W_1(t) := -W(T)$
+\item $W_2(t) := W(t+c) - W(c)$
+\item $W_3(t) := tW(\frac{1}{t}), W_3(0)=0$ 
+\end{itemize}
+też są.
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\end{flashcard}
+
+\end{document}
