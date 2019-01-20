@@ -11,7 +11,7 @@
 
 \begin{document}
 
-\cardfrontfoot{Teoria Prawdopodobieństwa}
+\cardfrontfoot{Teoria Prawdopodobieństwa II}
 
 % % % % % % % % % % % % % % % % %
 % Warunkowa wartość oczekiwana  %
@@ -78,6 +78,49 @@ to jest martyngałem. ($ \leq $: nadmartyngałem [supermartyngałem], $ \geq $: 
 Ciąg $ \left( H_n \right) _{n < \omega} $ jest prognozowalny, jeśli $H_{n+1}$ jest $\mathcal{F}_n$-mierzalny.
 \end{flashcard}
 
+\begin{flashcard}[Definicja]{Czas zatrzymania}
+
+\smallskip
+$\tau: \Omega \rightarrow \{1, 2, ...\} \cup \{ \infty \}$ jest czasem zatrzymania, gdy $(\forall k \in \mathbb{N}) \, \{ \tau \leq k \} \in \mathcal{F}_k$ \\
+Jeżeli $\tau$ jest czasem zatrzymania, to $\mathbf{1}_{[\tau \geq n]}$ jest prognozowalny.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Twierdzenie A \\ Transformata martyngałowa}
+
+\smallskip
+Jeśli $(X_n)$: martyngał, $(H_n)$: prognozowalny, oraz $H_n$ są ograniczone z $P1$, to
+$$ (H \circ X)_n = \sum ^n _j H_j (X_j - X_{j-1})  $$
+jest martyngałem. \\
+Powyższe twierdzenie jest prawdziwe dla submartyngałów przy dodatkowym założeniu nieujemności $H_n$.
+\end{flashcard}
+
+\begin{flashcard}[Definicja]{Funkcja wypukła (a martyngały)}
+
+\smallskip
+Funkcja $\varphi$ jest wypukła, gdy $\varphi(x) = \sup \{ ax+b : (a, b) \in S\}$, gdzie $S := \{(a, b) : a, b \in \mathbb{Q} \; \text{i} \; (\forall x) \, ax+b \leq \varphi(x) \}$. \\
+Jeśli $(X_n)$: mtg i $\varphi$: wypukła, to $(\varphi(X_n))$ jest submtg. \\
+Jeśli $(X_n)$: submtg i $\varphi$: wypukła, niemalejąca, to $(\varphi(X_n))$ jest submtg.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Twierdzenie B \\ Upcrossing inequality}
+
+\smallskip
+Dla submtg $(X_n)$, $ a < b $
+$$ (b-a) \mathbb{E}[U_n] \leq \mathbb{E}[(X_n-a)^+] - \mathbb{E}[(X_0 - a)^+]$$
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Twierdzenie C \\ Zbieżność submartyngałów}
+
+\smallskip
+Jeśli $(X_n)$: submtg, $\sup _n \mathbb{E}[X ^+ _n] < K < \infty$, to istnieje $X_\infty \in L_1$ t. że $X_n \rightarrow X_\infty$ z $P1$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Rozkład Dooba}
+
+\smallskip
+Każdy submtg $(X_n)$ ma jednoznaczny rozkład $X_n = M_n + A_n$ gdzie $(M_n)$: mtg, $A_0 = 0$, $A_n \geq 0$: niemalejący, prognozowalny.
+\end{flashcard}
+
 \begin{flashcard}[]{}
 \end{flashcard}
 
@@ -125,7 +168,7 @@ Jeśli $W(t)$, $t \geq 0$ jest procesem Wienera, to:
 \item $W_2(t) := W(t+c) - W(c)$
 \item $W_3(t) := tW(\frac{1}{t}), W_3(0)=0$ 
 \end{itemize}
-też są.
+też są.	
 \end{flashcard}
 
 \begin{flashcard}[]{}
