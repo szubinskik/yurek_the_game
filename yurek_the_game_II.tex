@@ -53,9 +53,6 @@ Wtedy $\mathbb{E} [ \mathbb{E} [ X | \mathcal{G}_2] | \mathcal{G}_1 ] =
        \mathbb{E} [ X | \mathcal{G}_1]$
 \end{flashcard}
 
-\begin{flashcard}[]{}
-\end{flashcard}
-
 % % % % % % % %
 % Martyngały  %
 % % % % % % % %
@@ -121,7 +118,11 @@ Jeśli $(X_n)$: submtg, $\sup _n \mathbb{E}[X ^+ _n] < K < \infty$, to istnieje 
 Każdy submtg $(X_n)$ ma jednoznaczny rozkład $X_n = M_n + A_n$ gdzie $(M_n)$: mtg, $A_0 = 0$, $A_n \geq 0$: niemalejący, prognozowalny.
 \end{flashcard}
 
-\begin{flashcard}[]{}
+\begin{flashcard}[Twierdzenie]{Nierówność Dooba dla submartyngałów}
+
+\smallskip
+Jeśli $(X_n)$: submartyngał i $\lambda > 0$, to:
+$$ \lambda \, \text{P} \left[ \max _{ 0 \leq j \leq m} X_j \geq \lambda \right] \leq \mathbb{E}[X ^+ _m] $$
 \end{flashcard}
 
 % % % % % % % % %
@@ -171,7 +172,72 @@ Jeśli $W(t)$, $t \geq 0$ jest procesem Wienera, to:
 też są.	
 \end{flashcard}
 
-\begin{flashcard}[]{}
+\begin{flashcard}[Twierdzenie]{Mocna własność Markowa}
+
+\smallskip
+Niech $W_t$: proces Wienera, $\mathcal{F}_t := \sigma (W_s : s \leq t) $ \\
+Ponadto $\tau: \Omega \rightarrow [0, \infty]$ jest czasem Markowa, tj. $$ \{ \tau \leq t \} \in \mathcal{F}_t$$
+Wtedy $W ^* _t := W(t + \tau(\omega), \omega) - W(\tau(\omega), \omega)$ jest procesem Wienera niezależnym od $\mathcal{F}_\tau := \{ A \in \mathcal{F} : \forall t \geq 0 \; ( \{\tau \leq t \} \cap A) \in \mathcal{F}_t \} $ ($\sigma$-algebra zatrzymana).
 \end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Zasada odbicia}
+
+\smallskip
+$$\text{P} [ \sup _{ s \leq t } W_s > a ] = 2 \text{P} [ W_t > a ] $$ 
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Prawo iterowanego logarytmu}
+
+\smallskip
+$$ \text{P} \left[ \limsup _{t \rightarrow 0} \frac{W(t)}{\sqrt{2t \log \log \frac{1}{t} }} \right] = 1 $$
+\end{flashcard}
+
+% % % % % % % % % % % % % % % %
+% Martyngały z czasem ciągłym %
+% % % % % % % % % % % % % % % %
+
+\begin{flashcard}[Definicja]{Martyngał z czasem ciągłym}
+
+\smallskip
+Martyngał z czasem ciągłym to proces stochastyczny $(M_t)_{t \geq 0}$ spełniający:
+\begin{itemize}
+\item $\mathbb{E} [|M_t|] < \infty$
+\item $M_t$: $\mathcal{F}_t$-mierzalna
+\item $\forall t > s \; \mathbb{E} \, [ M_t | \mathcal{F}_s ] = M_s$ z $P1$
+\end{itemize}
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Nierówność Dooba dla martyngałów z czasem ciągłym}
+
+\smallskip
+Niech $(M_t)_{t \geq 0}$: martyngał o ciągłych trajektoriach. Wtedy:
+$$ \forall \lambda > 0 \; \text{P} \left[ \sup _{s \leq t} M_t \geq \lambda \right] \leq \lambda \mathbb{E} \, [M ^+ _t ] $$
+gdzie $ M ^+ _t = M_t \lor 0 ]$.
+\end{flashcard}
+
+% % % % % % %
+% Michaszki %
+% % % % % % %
+
+\begin{flashcard}[Definicja]{Proces Lévy'ego}
+
+\smallskip
+Proces Lévy'eqo to rodzina zmiennych losowych $(X_t)_{t \geq 0}$ t. że:
+\begin{itemize}
+\item $X_0 \equiv 0$ z $P1$
+\item $\forall t > s \; X_t - X_s \stackrel{d}{=} X_{t-s} - X_0 $
+\item przyrosty są niezależne
+\item $ t \mapsto X_t $ ciągła wg. P, tj. $\text{P} [ | X_t -X_s | > \varepsilon ] \stackrel{s \rightarrow t}{\rightarrow} 0 $
+\end{itemize}
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Tożsamość Walda}
+
+\smallskip
+$$ \mathbb{E} \left[ \sum _{n = 1} ^{n = \tau} X_n \right] = \mathbb{E}\left[\tau \right] \mathbb{E}\left[X_1 \right] $$
+\end{flashcard}
+
+% \begin{flashcard}[]{}
+% \end{flashcard}
 
 \end{document}
