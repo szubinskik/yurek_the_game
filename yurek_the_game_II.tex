@@ -1,17 +1,142 @@
-\documentclass[avery5371,grid,frame]{flashcards}
+% % % % %
+% Fiszki z teorii statystyki %
+% by: Marcin Sidorowicz %
+% % % % %
 
-\usepackage{polski}
+\documentclass[avery5371, grid, frame]{flashcards}
+
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath,amssymb,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{mathtools}
 
+\geometry{headheight=12pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
 
-\cardfrontstyle[\large\slshape]{headings}
-\cardbackstyle{empty}
+\cardfrontstyle[]{headings}
+\cardfrontfoot{Teoria prawdopodobieństwa 2}
 
 
 \begin{document}
 
-\cardfrontfoot{Teoria Prawdopodobieństwa II}
+% % % % % % % % % % % %
+% Rozkłady graniczne  %
+% % % % % % % % % % % %
+
+\begin{flashcard}[Definicja]{Rozkład (miara probabilistyczna) nieskończenie podzielny}
+    Miarę probabilistyczną $\mu$ nazywamy nieskończenie podzielną, jeżeli 
+    $$ \forall k \geq 2, \exists \nu \in \mathcal{P}(\mathbb{R}),  \nu^{*k} = \mu.$$
+    Równoważnie:
+    $\varphi \in ID$, gdy  $\forall k \geq 2, \exists \psi - f.char., (\psi(t))^k = \varphi(t).$
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Funkcja charakterystyczna złożonego rozkładu Poissona}
+    Jeżeli $X_1, X_2, \dots, X_n$ są i.i.d. z rozkładu $\mu$ i $Z_\lambda \sim Pois(\lambda)$ jest niezależna od $X_i$, to zm. los. $\sum_{i=1}^{Z_\lambda} X_i$ ma funkcję charakterstyczną $\varphi(t) = e^{\lambda (\varphi_\mu(t) - 1)}$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Własności funkcji charakterystycznych ID}
+    \begin{enumerate}
+        \item Jeżeli $\varphi \in ID$, to $\varphi(t) \neq 0$ dla $t \in \mathbb{R}$,
+        \item $(ID, \textasteriskcentered, \Rightarrow)$ jest domkniętą półgrupą,
+        \item Jeżeli $X \in ID$, to $aX + b \in ID$ dla $a, b \in \mathbb{R}$.
+    \end{enumerate}
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Generowanie funkcji char. ID z miar borelowskich}
+    Dla skończonej miary borelowskiej $m$ na $\mathbb{R}$ funkcja 
+    $$ \varphi(t) = \exp \left (\int_\mathbb{R} (e^{itx} - 1 - itx) \frac{1}{x^2} dm \right) $$ jest funkcją charakterystyczną rozkładu ID. Uwaga: to twierdzenie nie opisuje wszystkich funkcji ID.
+\end{flashcard}
+
+\begin{flashcard}[Definicja]{Układ trójkątny}
+    $X_{n, k}, k \in \{1, 2, \dots, k_n \}$ stoch. niezależne, $\mathbb{E}X_{n, k} = 0, Var(X_{n, k}) = \sigma^2_{n, k}$, $s_n^2 = \sum Var(X_{n, k})$. \\
+    $\sup_n s_n^2 < \infty$, $\max_k \sigma_{n,k}^2 \xrightarrow{n} 0$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Układy trójkątne a nieskończona podzielność}
+    Jeśli $X \in ID_2^0$ (tzn. $X \in ID$ i $\mathbb{E}(X^2) < \infty$), to istnieje taki układ trójkątny, że $\sum_1^{k_n} X_{n, k} \xRightarrow[n]{} X$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Wzór Kołmogorowa}
+    Jeśli w układzie trójkątnym mamy $\sum_1^{k_n} \xRightarrow[n]{} X$, to $X \in ID_2$ oraz istnieje $m \in \mathcal{P}(\mathbb{R})$ t. że
+    $$ \varphi(t) = \exp \left (\int_\mathbb{R} (e^{itx} - 1 - itx) \frac{1}{x^2} dm \right), $$ gdzie $m(\mathbb{R}) = \mathbb{E}(X^2)$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Wzór L\'evy'ego-Chinczyna}
+\begin{footnotesize}
+    $X \in ID \iff \exists a \in \mathbb{R}, \sigma \geq 0, \exists G \in  \mathcal{M}(\mathbb{R})$, t.że
+    $$ \varphi_X(t) = \exp \left (ita - \frac{1}{2}t^2\sigma^2 + \int_\mathbb{R} (e^{itx} - 1 - \frac{itx}{1+x^2}) \frac{itx^2}{x^2} dG
+    \right)$$
+    Można zapisać inaczej:
+    $$ \varphi_X(t) = \exp \left (ita - \frac{1}{2}t^2\sigma^2 + \int_{\mathbb{R} \textbackslash \{ 0 \}} (e^{itx} - 1 - \frac{itx}{1+x^2}) dM
+    \right)$$
+    gdzie $M$ - miara skończona na $\mathbb{R} \textbackslash \{0\}$, $M( \{ x : |x| > \epsilon\} < \infty$, $\int_{\mathbb{R}} 1 \wedge x^2 dM < \infty$. $a$, $\sigma$, $M$ są jednoznaczne.
+\end{footnotesize}
+\end{flashcard}
+
+\begin{flashcard}[Definicja]{Rozkład samorozkładalny}
+    Niech $(Z_n)$ będą stoch. niezależne, $a_n > 0$, $b_n \in \mathbb{R}$ takie że
+    \begin{enumerate}
+        \item Układ $\{a_n Z_k : 1 \leq k \leq n, n \geq 1 \}$ jest infinitezymalny,
+        \item $a_n(Z_1 + Z_2 + \dots + Z_n) \Rightarrow \mu$.
+    \end{enumerate}
+    Wtedy $\mu$ nazywamy samorozkładalną (L - klasa rozkładów samorozkładalnych).
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Twierdzenie Chinczyna o zbieżności typów}
+    Jeżeli $X_n \Rightarrow X$, $Y_n := a_n X_n \Rightarrow Y$ dla $a_n > 0$, $b_n \in \mathbb{R}$ oraz $X$ i $Y$ są niezdegenerowane, to $a_n \rightarrow a$ i $b_n \rightarrow b$, gdzie $Y = aX + b$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Twierdzenie L\'evy'ego (i wniosek)}
+    $X \in L$ wtedy i tylko wtedy, gdy $\forall c \in (0, 1), \exists X_c \bot X, X \overset{d}{=} cX + X_c$. \\
+    Równoważnie, gdy $\varphi_X(t) = \varphi_X(ct) + \psi_c(t)$. \\
+    Wniosek: $X \sim [a, \sigma^2, M] \in L \iff \forall c \in (0, 1), \forall B \subseteq \mathbb{R} \textbackslash \{0\}, M(B) \geq T_c M(B) = M(c^{-1} B)$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Twierdzenie Urbanika}
+\begin{small}
+    $\varphi : \mathbb{R} \rightarrow \mathbb{C}$ jest funkcją charakterystyczną rozkładu z klasy L wtedy i tylko wtedy, gdy
+    \begin{multline*}
+        \varphi_X(t) = \exp (itx_0 - \frac{1}{4}t^2\sigma^2 + \\ \int_{\mathbb{R} \textbackslash \{ 0 \}} (\int_0^1 \frac{e^{itxw}}{w}dw - 1 - itx \chi_{|x|<1}) dM)
+    \end{multline*}
+    gdzie $M$ jest miarą L\'evy'ego oraz $\int_{|x| < \epsilon} \log(1+|x|)dM < \infty$. Ponadto trójka $x_0, \sigma^2, M$ jest jednoznaczna.
+\end{small}
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Twierdzenie Verwaata}
+    $$\varphi_x \in L
+    \iff X \overset{d}{=} \int_0^\infty e^{-s} dY(s),$$
+    gdzie $Y(s)$ jest procesem L\'evy'ego.
+\end{flashcard}
+
+\begin{flashcard}[Definicja]{Rozkład stabilny}
+    Zmienna losowa $Y$ jest stabilna, gdy istnieje $a_n > 0$, ciąg $(V_n)$ i.i.d. oraz $b_n \in \mathbb{R}$ takie, że $a_n(V_1 + \dots + V_n) + b_n \Rightarrow Y$.
+\end{flashcard}
+
+\begin{flashcard}[Twierdznie]{Równanie splotowe rozkładu stabilnego}
+    NWSR:
+    \begin{enumerate}
+        \item $\mu$ jest stabilna,
+        \item $\exists \alpha > 0, \forall n \geq 1, \exists Z_n \in \mathbb{R}, \mu^{\textasteriskcentered n} = T_{n^{1/\alpha}} \mu \textasteriskcentered \delta_{Z_n}$,
+        \item $\exists \alpha > 0, \forall t > 0, \exists Z_t \in \mathbb{R}, \mu^{\textasteriskcentered n} = T_{t^{1/\alpha}} \mu \textasteriskcentered \delta_{Z_t}$
+    \end{enumerate}
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Równanie splotowe sumy rozkładów stabilnych i ograniczenie wykładnika $\alpha$}
+    \begin{itemize}
+        \item $\exists \alpha > 0, \forall a, b > 0, \exists Z(a, b) \in \mathbb{R}, T_a \mu \textasteriskcentered T_b \mu = T_{(a^\alpha + b^\alpha)^{1/\alpha}} \mu \textasteriskcentered \delta_{Z_(a, b)}$
+        \item Jeśli niezdegenerowana $\mu$ jest stabilna, to $\alpha \in (0, 2]$. Ponadto $\mu$ jest albo gaussowska ($\alpha = 2$), albo niesk. podzielna bez części gaussowskiej.
+    \end{itemize}
+\end{flashcard}
+
+\begin{flashcard}[Twierdzenie]{Postać symetrycznej, nie-gaussowskiej zmiennej stabilnej}
+$$ \varphi_X (t)= \exp (-c_\alpha |t|^\alpha) =
+\exp \left( \int_0^\infty (\cos tx - 1) \frac{dx}{x^{1+\alpha}} \right)$$
+\end{flashcard}
 
 % % % % % % % % % % % % % % % % %
 % Warunkowa wartość oczekiwana  %
@@ -219,7 +344,7 @@ gdzie $ M ^+ _t = M_t \lor 0 ]$.
 % Michaszki %
 % % % % % % %
 
-\begin{flashcard}[Definicja]{Proces Lévy'ego}
+\begin{flashcard}[Definicja]{Proces L\'evy'ego}
 
 \smallskip
 Proces Lévy'eqo to rodzina zmiennych losowych $(X_t)_{t \geq 0}$ t. że:
@@ -236,8 +361,5 @@ Proces Lévy'eqo to rodzina zmiennych losowych $(X_t)_{t \geq 0}$ t. że:
 \smallskip
 $$ \mathbb{E} \left[ \sum _{n = 1} ^{n = \tau} X_n \right] = \mathbb{E}\left[\tau \right] \mathbb{E}\left[X_1 \right] $$
 \end{flashcard}
-
-% \begin{flashcard}[]{}
-% \end{flashcard}
 
 \end{document}
